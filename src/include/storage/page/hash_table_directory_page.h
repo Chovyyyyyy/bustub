@@ -19,6 +19,9 @@
 
 #include "storage/index/generic_key.h"
 #include "storage/page/hash_table_page_defs.h"
+#include "storage/page/hash_table_bucket_page.h"
+
+#define MAX_BUCKET_DEPTH 9
 
 namespace bustub {
 
@@ -186,7 +189,12 @@ class HashTableDirectoryPage {
    */
   void PrintDirectory();
 
+  bool IsValid();
+
+  void SetValid();
+
  private:
+  bool is_valid_;
   page_id_t page_id_;
   lsn_t lsn_;
   uint32_t global_depth_{0};

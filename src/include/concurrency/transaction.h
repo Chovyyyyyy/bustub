@@ -79,13 +79,13 @@ class TableWriteRecord {
  */
 class IndexWriteRecord {
  public:
-  IndexWriteRecord(RID rid, table_oid_t table_oid, WType wtype, const Tuple &tuple, const Tuple &old_tuple,
+  IndexWriteRecord(RID rid, table_oid_t table_oid, WType wtype, const Tuple &tuple,
                    index_oid_t index_oid, Catalog *catalog)
       : rid_(rid),
         table_oid_(table_oid),
         wtype_(wtype),
         tuple_(tuple),
-        old_tuple_(old_tuple),
+        //old_tuple_(old_tuple),
         index_oid_(index_oid),
         catalog_(catalog) {}
 
